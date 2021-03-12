@@ -39,33 +39,29 @@ saveButton.on("click", function() {
     //     text: userTextInput,
     //     time: timeSlot
     // }
+    // localStorage.setItem(timeSlot, JSON.stringify(savedToDo));
     localStorage.setItem(timeSlot, userTextInput);
 
 });
 
-// // function to pull from local storage
-// function generateSaved () {
-//     for (i = 09; i <= 17; i++) {
-//         $("#" + i).children("textarea").text(localStorage.getItem(i));
-//     }
-// }
-
-$(".time-block").each(function() {
-    
-    if (parseInt($(this).attr("id")) === localStorage.getItem("key")) {
-        $(this).children("textarea").text(localStorage.getItem(value));
+// function to pull from local storage
+function generateSaved () {
+    for (i = 9; i <= 17; i++) {
+        $("#" + i).children("textarea").text(localStorage.getItem(i));
     }
-});
+}
 
-// generateSaved();
+// $(".time-block").each(function() {
+//     // var localPulled = localStorage.getItem(JSON.parse(timeSlot));
+//     // console.log(localPulled);
+//     if (parseInt($(this).attr("id")) === localStorage.getItem(key).val()) {
+//         $(this).children("textarea").text(localStorage.getItem(value));
+//     }
+// });
 
-var testButton = $(".saveBtn1");
-
-testButton.on("click", function() {
-    console.log(Object.entries(localStorage));
-});
 
 
+generateSaved();
 
 // set time interval for current date/time display to increment each second
 setInterval(displayDateAndTime, 1000);
