@@ -1,5 +1,6 @@
-var timeDisplayEl = $("#currentDay");
-var saveButton = $(".saveBtn");
+const timeDisplayEl = $("#currentDay");
+const saveButton = $(".saveBtn");
+
 
 // Display for current date/time @ header
 function displayDateAndTime() {
@@ -12,7 +13,7 @@ function getCurrentHour() {
     return moment().hour();
 }
 // Assign current hour to a variable
-var currentHour = getCurrentHour();
+const currentHour = getCurrentHour();
 
 console.log(currentHour);
 
@@ -20,7 +21,7 @@ console.log(currentHour);
 
 // Function to color code each timeblock element
 $(".time-block").each(function() {
-    var hourDivEl = $(this).attr("id");
+    let hourDivEl = $(this).attr("id");
     if (parseInt(hourDivEl) === currentHour) {
         $(this).children("textarea").addClass("present");
     } else if (parseInt(hourDivEl) > currentHour) {
@@ -31,9 +32,9 @@ $(".time-block").each(function() {
 
 // function to save user input within textarea
 saveButton.on("click", function() {
-    var userTextInput = $(this).siblings("textarea").val();
+    let userTextInput = $(this).siblings("textarea").val();
     console.log(userTextInput);
-    var timeSlot = $(this).parent().attr("id");
+    let timeSlot = $(this).parent().attr("id");
     console.log(timeSlot);
     // var savedToDo = {
     //     text: userTextInput,
@@ -46,7 +47,7 @@ saveButton.on("click", function() {
 
 // function to pull from local storage
 function generateSaved () {
-    for (i = 9; i <= 17; i++) {
+    for (let i = 9; i <= 17; i++) {
         $("#" + i).children("textarea").text(localStorage.getItem(i));
     }
 }
@@ -54,7 +55,7 @@ function generateSaved () {
 // $(".time-block").each(function() {
 //     // var localPulled = localStorage.getItem(JSON.parse(timeSlot));
 //     // console.log(localPulled);
-//     if (parseInt($(this).attr("id")) === localStorage.getItem(key).val()) {
+//     if (parseInt($(this).attr("id")) === localStorage.getItem().val()) {
 //         $(this).children("textarea").text(localStorage.getItem(value));
 //     }
 // });
