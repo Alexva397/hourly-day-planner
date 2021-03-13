@@ -1,3 +1,4 @@
+// Variable assignment
 const timeDisplayEl = $("#currentDay");
 const saveButton = $(".saveBtn");
 
@@ -14,10 +15,7 @@ function getCurrentHour() {
 }
 // Assign current hour to a variable
 const currentHour = getCurrentHour();
-
 console.log(currentHour);
-
-
 
 // Function to color code each timeblock element
 $(".time-block").each(function() {
@@ -36,11 +34,6 @@ saveButton.on("click", function() {
     console.log(userTextInput);
     let timeSlot = $(this).parent().attr("id");
     console.log(timeSlot);
-    // var savedToDo = {
-    //     text: userTextInput,
-    //     time: timeSlot
-    // }
-    // localStorage.setItem(timeSlot, JSON.stringify(savedToDo));
     localStorage.setItem(timeSlot, userTextInput);
 
 });
@@ -52,16 +45,7 @@ function generateSaved () {
     }
 }
 
-// $(".time-block").each(function() {
-//     // var localPulled = localStorage.getItem(JSON.parse(timeSlot));
-//     // console.log(localPulled);
-//     if (parseInt($(this).attr("id")) === localStorage.getItem().val()) {
-//         $(this).children("textarea").text(localStorage.getItem(value));
-//     }
-// });
-
-
-
+// Call function to generate saved content in local storage
 generateSaved();
 
 // set time interval for current date/time display to increment each second

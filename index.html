@@ -23,14 +23,17 @@
   </head>
 
   <body>
+    <!-- Page header -->
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <h4 class=lead> Today: </h4>
+      <!-- Current time/date display -->
       <p id="currentDay" class="lead"></p>
     </header>
+    <!-- Container for main content -->
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- Time slot divs -->
       <div id="9" class="row time-block justify-content-center">
         <div class="col-1 hour">9AM</div>
         <textarea class="col-8 past"></textarea>
@@ -77,7 +80,8 @@
         <button type="button" class="col-1 btn saveBtn">💾</button>
       </div>
     </div>
-
+    
+    <!-- Linked JQuery, Moment and script.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
